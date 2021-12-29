@@ -1,7 +1,7 @@
 import React from "react";
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
-export default function Button() {
+export default function Button({ className, children }) {
     return (
         <ButtonContainer>
             <ButtonText>View my work</ButtonText>
@@ -17,6 +17,8 @@ const ButtonContainer = styled.div`
     border-color: #ffffff;
 
     color: #ffffff;
+
+    margin-top: 20px;
 
     transition: border-color 0.2s ease, color 0.2s ease;
 

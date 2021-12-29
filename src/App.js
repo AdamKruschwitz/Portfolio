@@ -1,11 +1,11 @@
 import './App.css';
-import Button from './components/Button'
+import Home from './sections/Home'
 
 function App() {
   return (
     <div>
       {/* TODO - Add page components here */}
-      <Button />
+      <Home />
     </div>
   );
 }
