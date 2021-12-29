@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 import Button from "../components/Button";
 
@@ -16,9 +16,19 @@ export default function Home () {
 }
 
 const Background = styled.div`
-    background: radial-gradient(circle at top, #35416D, var(--primary));
+    background: radial-gradient(100% 100% at 50% 0%, #4e60a0, var(--primary));
     width: 100vw;
     height: 100vh;
+`
+
+const fadein = keyframes`
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 `
 
 const Content = styled.div`
@@ -32,6 +42,9 @@ const Content = styled.div`
     margin: auto;
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
+
+    /* Fade in animation */
+    animation: ${fadein} 1s linear;
 `
 
 const Text = styled.h1`
