@@ -8,6 +8,9 @@ import { BiDevices } from 'react-icons/bi';
 import { BsLightbulbFill } from 'react-icons/bs';
 import { IoIosRocket } from 'react-icons/io';
 
+// Images
+import headshot from '../images/headshot.jpg'
+
 export default function About() {
     return (
         <Container>
@@ -29,6 +32,17 @@ export default function About() {
                     <DynamicIcon />
                 </FeatureCard>
             </FeaturesContainer>
+
+            <DescriptionContainer>
+                <DescriptionLeft>
+                    <Headshot src={headshot} />
+                    <DescriptionText>
+                    I’m a full stack developer in Santa Clara, CA.
+I have a knack for creating fluid and stylish UI and I’m on a mission to end dark-patterns in UI and make the internet a safe place.
+                    </DescriptionText>
+                    <DescriptionText><HilightedText>Let’s build the web we want to see.</HilightedText></DescriptionText>
+                </DescriptionLeft>
+            </DescriptionContainer>
         </Container>
     )
 }
@@ -100,4 +114,52 @@ const DynamicIcon = styled(IoIosRocket)`
     color: #ffffff;
     width: 96px;
     height: 96px;
+`
+
+const DescriptionContainer = styled.section`
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+
+    margin-left: 196px; margin-right: 196px;
+    margin-top: 64px;
+`
+
+const DescriptionLeft = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+
+    width: 40%;
+`
+
+const Headshot = styled.img`
+    width: 100%; height: auto;
+    border-radius: 10px;
+    overflow: hidden;
+
+    margin-bottom: 16px;
+`
+
+const DescriptionText = styled.p`
+    margin: 0;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.05em;
+
+    color: var(--primary)
+`
+
+const HilightedText = styled.span`
+    font-weight: bold;
+    color: var(--hilight);
 `
