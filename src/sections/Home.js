@@ -17,7 +17,7 @@ export default function Home () {
 
 const Background = styled.div`
     background: radial-gradient(100% 100% at 50% 0%, #4e60a0, var(--primary));
-    width: 100vw;
+    width: 100%;
     height: 100vh;
 `
 
