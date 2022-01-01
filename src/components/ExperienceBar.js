@@ -1,11 +1,34 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled, { keyframes } from "styled-components";
 
 export default function ExperienceBar({title, percentage}) {
+    const [isVisible, setIsVisible] = useState(false);
+    const ref = useRef();
+
+    useEffect(() => {
+        // Set visible to true when half the item is in the viewport
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                console.log(entry);
+                if(entry.isIntersecting) {
+                    console.log('it works!');
+                    setIsVisible(true);
+                }
+            },
+            {
+                root: null,
+                rootMargin: "0px",
+                threshold: 1.0
+            }
+        );
+        if(ref.current) observer.observe(ref.current);
+    }, [ref]);
+
     
+
     return (
-        <Container>
-            <Experience percentage={percentage} />
+        <Container ref={ref}>
+            {isVisible && <Experience percentage={percentage} />}
             <Text>{title}</Text>
             <TextRight>{percentage+"%"}</TextRight>
         </Container>
