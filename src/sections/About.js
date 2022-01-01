@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import FeatureCard from "../components/FeatureCard";
+import ExperienceBar from "../components/ExperienceBar";
 
 // Icons
 import { CgBolt } from 'react-icons/cg';
@@ -35,13 +36,25 @@ export default function About() {
 
             <DescriptionContainer>
                 <DescriptionLeft>
-                    <Headshot src={headshot} />
+                    <Headshot src={headshot} alt="A smiling young man in front of a painted brick wall." />
                     <DescriptionText>
-                    I’m a full stack developer in Santa Clara, CA.
-I have a knack for creating fluid and stylish UI and I’m on a mission to end dark-patterns in UI and make the internet a safe place.
+                        I’m a full stack developer in Santa Clara, CA.
+                        I have a knack for creating fluid and stylish UI and I’m on a mission to end dark-patterns in UI and make the internet a safe place.
                     </DescriptionText>
-                    <DescriptionText><HilightedText>Let’s build the web we want to see.</HilightedText></DescriptionText>
+                    <DescriptionText>
+                        <HilightedText> Let’s build the web we want to see. </HilightedText>
+                    </DescriptionText>
                 </DescriptionLeft>
+                <DescriptionRight>
+                    <ExperienceBar title="HTML" percentage="90" />
+                    <ExperienceBar title="CSS3" percentage="90" />
+                    <ExperienceBar title="JavaScript" percentage="80" />
+                    <ExperienceBar title="Node.js" percentage="70" />
+                    <ExperienceBar title="Express.js" percentage="50" />
+                    <ExperienceBar title="React.js" percentage="60" />
+                    <ExperienceBar title="Figma" percentage="70" />
+                    <ExperienceBar title="UI/UX" percentage="90" />
+                </DescriptionRight>
             </DescriptionContainer>
         </Container>
     )
@@ -120,7 +133,7 @@ const DescriptionContainer = styled.section`
     display: flex;
     flex-direction: row;
     justify-content: start;
-    align-items: center;
+    align-items: stretch;
 
     margin-left: 196px; margin-right: 196px;
     margin-top: 64px;
@@ -156,10 +169,20 @@ const DescriptionText = styled.p`
     text-align: center;
     letter-spacing: 0.05em;
 
-    color: var(--primary)
+    color: var(--primary);
 `
 
 const HilightedText = styled.span`
     font-weight: bold;
     color: var(--hilight);
+`
+
+const DescriptionRight = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+
+    width: 60%;
+    padding-left: 64px;
 `
