@@ -9,9 +9,7 @@ export default function ExperienceBar({title, percentage}) {
         // Set visible to true when half the item is in the viewport
         const observer = new IntersectionObserver(
             ([entry]) => {
-                console.log(entry);
                 if(entry.isIntersecting) {
-                    console.log('it works!');
                     setIsVisible(true);
                 }
             },
@@ -21,6 +19,7 @@ export default function ExperienceBar({title, percentage}) {
                 threshold: 1.0
             }
         );
+        // set the item to be observed
         if(ref.current) observer.observe(ref.current);
     }, [ref]);
 
@@ -28,6 +27,7 @@ export default function ExperienceBar({title, percentage}) {
 
     return (
         <Container ref={ref}>
+            {/* Display the experience bar only when the page is visible */}
             {isVisible && <Experience percentage={percentage} />}
             <Text>{title}</Text>
             <TextRight>{percentage+"%"}</TextRight>

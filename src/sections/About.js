@@ -136,7 +136,7 @@ const DescriptionContainer = styled.section`
     align-items: stretch;
 
     margin-left: 196px; margin-right: 196px;
-    margin-top: 64px;
+    margin-top: 64px; margin-bottom: 64px;
 `
 
 const DescriptionLeft = styled.div`
