@@ -13,6 +13,7 @@ export default function Portfolio() {
                 {/* TODO - Add filtering options */}
             </FilterContainer>
             <PortfolioContainer>
+                {/* TODO - Add real project data */}
                 <ProjectCard image={headshot} name="Test" technologies="React/Express"/>
                 <ProjectCard image={headshot} />
                 <ProjectCard image={headshot} />
@@ -71,6 +72,8 @@ const PortfolioContainer = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
 
-    margin-top: 32px; margin-bottom: 64px;
+    /* Using bottom padding to extend container */
+    padding-top: 32px; padding-bottom: 64px;
     margin-left: 140px; margin-right: 140px;
 `
+
