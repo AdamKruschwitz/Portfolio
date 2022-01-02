@@ -1,10 +1,10 @@
 import React from "react";
 import styled from 'styled-components';
 
-export default function Button({ className, children }) {
+export default function Button({ className, children, text }) {
     return (
         <ButtonContainer>
-            <ButtonText>View my work</ButtonText>
+            <ButtonText>{text}</ButtonText>
         </ButtonContainer>
     )
 }

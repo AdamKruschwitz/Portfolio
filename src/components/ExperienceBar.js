@@ -27,7 +27,7 @@ export default function ExperienceBar({title, percentage}) {
 
     return (
         <Container ref={ref}>
-            {/* Display the experience bar only when the page is visible */}
+            {/* Render the experience bar only when the item is visible */}
             {isVisible && <Experience percentage={percentage} />}
             <Text>{title}</Text>
             <TextRight>{percentage+"%"}</TextRight>

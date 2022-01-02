@@ -9,7 +9,7 @@ export default function Home () {
             <Content>
                 <Text>Hi, I'm <Hilighted>Adam Kruschwitz</Hilighted></Text>
                 <Text>I'm a full-stack web developer.</Text>
-                <Button />
+                <Button text="View my work" />
             </Content>
         </Background>
     )

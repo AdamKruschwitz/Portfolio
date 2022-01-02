@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import ProjectCard from "../components/ProjectCard";
+import headshot from "../images/headshot.jpg";
 
 export default function Portfolio() {
     return (
@@ -7,6 +9,17 @@ export default function Portfolio() {
             <HeaderContainer>
                 <HeaderText>PORTFOLIO</HeaderText>
             </HeaderContainer>
+            <FilterContainer>
+                {/* TODO - Add filtering options */}
+            </FilterContainer>
+            <PortfolioContainer>
+                <ProjectCard image={headshot} name="Test" technologies="React/Express"/>
+                <ProjectCard image={headshot} />
+                <ProjectCard image={headshot} />
+                <ProjectCard image={headshot} />
+                <ProjectCard image={headshot} />
+                <ProjectCard image={headshot} />
+            </PortfolioContainer>
         </Container>
     )
 }
@@ -42,4 +55,22 @@ const HeaderText = styled.h2`
 
     /* Stylized underline */
     border-bottom: 5px solid var(--primary);
+`
+
+const FilterContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+`
+
+const FilterOption = styled.a`
+    /* TODO */
+`
+
+const PortfolioContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    margin-top: 32px; margin-bottom: 64px;
+    margin-left: 140px; margin-right: 140px;
 `
