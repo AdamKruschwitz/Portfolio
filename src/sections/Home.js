@@ -12,7 +12,7 @@ export default function Home () {
                 <Button 
                     text="View my work" 
                     color="#ffffff" 
-                    onClick={() => console.log("home button clicked")}
+                    link="#portfolio"
                 />
             </Content>
         </Background>

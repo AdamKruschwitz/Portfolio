@@ -1,11 +1,13 @@
 import React from "react";
 import styled from 'styled-components';
 
-export default function Button({ className, children, text, color, onClick }) {
+export default function Button({ className, text, color, onClick, link }) {
     return (
-        <ButtonContainer color={color} onClick={onClick}>
+        <a href={link}>
+        <ButtonContainer color={color} onClick={onClick} href="https://google.com">
             <ButtonText>{text}</ButtonText>
         </ButtonContainer>
+        </a>
     )
 }
 

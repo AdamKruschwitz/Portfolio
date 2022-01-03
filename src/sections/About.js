@@ -101,8 +101,7 @@ const HeaderContainer = styled.div`
     justify-content: center;
     align-items: center;
 
-    /* Make room for the nav bar */
-    margin-top: 125px;
+    margin-top: 64px;
 `
 
 const FastIcon = styled(CgBolt)`

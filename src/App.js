@@ -11,7 +11,7 @@ function App() {
       {/* TODO - Add page components here */}
       <Home />
       <About />
-      <Portfolio />
+      <Portfolio id="portfolio"/>
       <Contact />
       <Footer />
     </div>

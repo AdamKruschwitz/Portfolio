@@ -1,11 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 import ProjectCard from "../components/ProjectCard";
-import headshot from "../images/headshot.jpg";
+import Gallery from "../images/3DGalleryScreenshot.PNG";
+import CodingQuiz from "../images/CodingQuizScreenshot.PNG";
+import WeatherDashboard from "../images/WeatherDashboardScreenshot.PNG";
+import Animates from "../images/AnimatesScreenshot.png";
+
+import projects from "../db/projects.json"
 
 export default function Portfolio() {
+    const images = {
+        Gallery,
+        CodingQuiz,
+        WeatherDashboard,
+        Animates
+    }
     return (
-        <Container>
+        <Container id="portfolio">
             <HeaderContainer>
                 <HeaderText>PORTFOLIO</HeaderText>
             </HeaderContainer>
@@ -13,13 +24,16 @@ export default function Portfolio() {
                 {/* TODO - Add filtering options */}
             </FilterContainer>
             <PortfolioContainer>
-                {/* TODO - Add real project data */}
-                <ProjectCard image={headshot} name="Test" technologies={["React", "Express"]} description="A test to end all tests!"/>
-                <ProjectCard image={headshot} />
-                <ProjectCard image={headshot} />
-                <ProjectCard image={headshot} />
-                <ProjectCard image={headshot} />
-                <ProjectCard image={headshot} />
+                {projects.map((project) => {
+                    return <ProjectCard
+                        name={project.title}
+                        technologies={project.technologies}
+                        image={images[project["image-name"]]}
+                        description={project["long-description"]}
+                        github={project["github-link"]}
+                        liveLink={project["deployed-link"]}
+                    />
+                })}
             </PortfolioContainer>
         </Container>
     )

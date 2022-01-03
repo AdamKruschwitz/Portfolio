@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Button from "./Button";
 import ProjectDialog from "./ProjectDialog";
 
-export default function ProjectCard({name, technologies, image, description}) {
+export default function ProjectCard({name, technologies, image, description, github, liveLink}) {
     const [displayModal, setDisplayModal] = useState(false);
     // Convert technologies name to slash separated list
     // var technologiesString = technologies.reduce((prev, cur) => prev+"/"+cur);
@@ -29,6 +29,8 @@ export default function ProjectCard({name, technologies, image, description}) {
                 name={name}
                 technologies={technologies}
                 image={image}
+                github={github}
+                liveLink={liveLink}
             />
         </Container>
     )
@@ -41,8 +43,8 @@ const Container = styled.div`
 `
 
 const ProjectImage = styled.img`
-    min-width: 100%;
-    height: auto; 
+    max-width: auto;
+    height: 100%; 
 `
 
 const OverlayContainer = styled.div`
@@ -92,16 +94,3 @@ const Technologies = styled.p`
     padding: 10px;
 `
 
-const DescriptionText = styled.p`
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 21px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.05em;
-
-    color: var(--primary);
-`

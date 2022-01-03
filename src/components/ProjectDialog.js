@@ -12,8 +12,8 @@ export default function ProjectDialog({description, image, name, visible, setVis
                     <DialogTitle>{name}</DialogTitle>
                     <DialogDescription>{description}</DialogDescription>
                     <ControlsContainer>
-                        <Button color="#161D47" text="Live Site" />
-                        <Button color="#161D47" text="GitHub" />
+                        <Button color="#161D47" text="Live Site" link={liveLink} />
+                        <Button color="#161D47" text="GitHub" link={github} />
                     </ControlsContainer>
                 </DialogText>
             </DialogContainer>
@@ -88,7 +88,7 @@ const DialogDescription = styled.p`
     line-height: 21px;
     display: flex;
     align-items: center;
-    text-align: center;
+    text-align: left;
     letter-spacing: 0.05em;
 
     color: var(--primary);
