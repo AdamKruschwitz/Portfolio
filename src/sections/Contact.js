@@ -1,5 +1,4 @@
 import React from "react";
-import { IoMdContact } from "react-icons/io";
 import styled from "styled-components";
 // Icons
 import {AiFillPhone} from "react-icons/ai";

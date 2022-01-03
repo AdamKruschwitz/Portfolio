@@ -14,7 +14,7 @@ export default function Portfolio() {
             </FilterContainer>
             <PortfolioContainer>
                 {/* TODO - Add real project data */}
-                <ProjectCard image={headshot} name="Test" technologies="React/Express" description="A test to end all tests!"/>
+                <ProjectCard image={headshot} name="Test" technologies={["React", "Express"]} description="A test to end all tests!"/>
                 <ProjectCard image={headshot} />
                 <ProjectCard image={headshot} />
                 <ProjectCard image={headshot} />

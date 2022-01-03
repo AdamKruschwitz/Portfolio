@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Button from "./Button";
-import Dialog from "@mui/material/Dialog";
-import DialogTitle from "@mui/material/DialogTitle";
-import DialogContent from "@mui/material/DialogContent";
+import ProjectDialog from "./ProjectDialog";
 
 export default function ProjectCard({name, technologies, image, description}) {
     const [displayModal, setDisplayModal] = useState(false);
-
+    // Convert technologies name to slash separated list
+    // var technologiesString = technologies.reduce((prev, cur) => prev+"/"+cur);
     return (
         <Container>
             <ProjectImage src={image} />
@@ -23,19 +22,14 @@ export default function ProjectCard({name, technologies, image, description}) {
                     }}
                 />
             </OverlayContainer>
-            <Dialog 
-                fullWidth={true}
-                open={displayModal}
-                onClose={() => {
-                    setDisplayModal(false);
-                }}
-            >
-                <DialogTitle>{name}</DialogTitle>
-                <DialogContent>
-                    <DescriptionText>{description}</DescriptionText>
-
-                </DialogContent>
-            </Dialog>
+            <ProjectDialog
+                description={description}
+                visible={displayModal}
+                setVisible={setDisplayModal}
+                name={name}
+                technologies={technologies}
+                image={image}
+            />
         </Container>
     )
 }
@@ -110,11 +104,4 @@ const DescriptionText = styled.p`
     letter-spacing: 0.05em;
 
     color: var(--primary);
-`
-
-const DialogControlsContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
 `
