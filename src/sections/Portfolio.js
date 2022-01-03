@@ -77,9 +77,9 @@ const FilterContainer = styled.div`
     flex-direction: row;
 `
 
-const FilterOption = styled.a`
-    /* TODO */
-`
+// const FilterOption = styled.a`
+//     /* TODO */
+// `
 
 const PortfolioContainer = styled.div`
     display: flex;
