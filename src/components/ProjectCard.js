@@ -1,15 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Button from "./Button";
+import Dialog from "@mui/material/Dialog";
+import DialogTitle from "@mui/material/DialogTitle";
+import DialogContent from "@mui/material/DialogContent";
 
-export default function ProjectCard({name, technologies, image}) {
+export default function ProjectCard({name, technologies, image, description}) {
+    const [displayModal, setDisplayModal] = useState(false);
+
     return (
         <Container>
             <ProjectImage src={image} />
             <OverlayContainer>
                 <ProjectTitle>{name}</ProjectTitle>
                 <Technologies>{technologies}</Technologies>
+                <Button 
+                    color="#161D47" 
+                    text="Learn More" 
+                    onClick={() => {
+                        setDisplayModal(true);
+                        console.log('button clicked');
+                    }}
+                />
             </OverlayContainer>
+            <Dialog 
+                fullWidth={true}
+                open={displayModal}
+                onClose={() => {
+                    setDisplayModal(false);
+                }}
+            >
+                <DialogTitle>{name}</DialogTitle>
+                <DialogContent>
+                    <DescriptionText>{description}</DescriptionText>
+
+                </DialogContent>
+            </Dialog>
         </Container>
     )
 }
@@ -72,3 +98,23 @@ const Technologies = styled.p`
     padding: 10px;
 `
 
+const DescriptionText = styled.p`
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.05em;
+
+    color: var(--primary);
+`
+
+const DialogControlsContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+`

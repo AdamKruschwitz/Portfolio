@@ -9,7 +9,11 @@ export default function Home () {
             <Content>
                 <Text>Hi, I'm <Hilighted>Adam Kruschwitz</Hilighted></Text>
                 <Text>I'm a full-stack web developer.</Text>
-                <Button text="View my work" />
+                <Button 
+                    text="View my work" 
+                    color="#ffffff" 
+                    onClick={() => console.log("home button clicked")}
+                />
             </Content>
         </Background>
     )
@@ -19,6 +23,7 @@ const Background = styled.div`
     background: radial-gradient(100% 100% at 50% 0%, #4e60a0, var(--primary));
     width: 100%;
     height: 100vh;
+    pointer-events: auto;
 `
 
 const fadein = keyframes`
