@@ -1,10 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+
 // Icons
 import {AiFillPhone} from "react-icons/ai";
 import {MdEmail} from "react-icons/md";
 import {AiFillLinkedin} from "react-icons/ai";
 import {AiFillGithub} from "react-icons/ai";
+
+// Responsive 
+import devices from "../devices";
 
 export default function Contact() {
     return (
@@ -93,28 +97,53 @@ const ContactText = styled.p`
     margin: 0;
     padding-left: 32px;
     color: var(--primary);
+
+    @media only screen and (max-width: ${devices.medium}) {
+        font-size: 18px;
+        padding-left: 16px;
+    }
 `
 
 const PhoneIcon = styled(AiFillPhone)`
     color: var(--primary);
     width: 48px;
     height: 48px;
+
+    @media only screen and (max-width: ${devices.medium}) {
+        width: 32px;
+        height: 32px;
+    }
 `
 
 const EmailIcon = styled(MdEmail)`
     color: var(--primary);
     width: 48px;
     height: 48px;
+    
+    @media only screen and (max-width: ${devices.medium}) {
+        width: 32px;
+        height: 32px;
+    }
 `
 
 const LinkedInIcon = styled(AiFillLinkedin)`
     color: var(--primary);
     width: 48px;
     height: 48px;
+    
+    @media only screen and (max-width: ${devices.medium}) {
+        width: 32px;
+        height: 32px;
+    }
 `
 
 const GitHubIcon = styled(AiFillGithub)`
     color: var(--primary);
     width: 48px;
     height: 48px;
+    
+    @media only screen and (max-width: ${devices.medium}) {
+        width: 32px;
+        height: 32px;
+    }
 `
