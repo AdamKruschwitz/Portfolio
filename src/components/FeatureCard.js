@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+import devices from "../devices";
+
 export default function FeatureCard({className, title, children}) {
     return (
         <Container>
@@ -29,6 +31,12 @@ const Card = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media only screen and (max-width: ${devices.medium}) {
+        flex: 1 0 41%;
+        /* Find a better way to do this, since it's not supported by some browsers */
+        aspect-ratio: 1;
+    }
 `
 
 const Title = styled.h3`
@@ -46,4 +54,9 @@ const Title = styled.h3`
 
     margin: 0;
     margin-top: 8px;
+
+    @media only screen and (max-width: ${devices.medium}) {
+        font-size: 18px;
+        line-height: 23px;
+    }
 `

@@ -12,6 +12,8 @@ import { IoIosRocket } from 'react-icons/io';
 // Images
 import headshot from '../images/headshot.jpg'
 
+import devices from "../devices";
+
 export default function About() {
     return (
         <Container>
@@ -89,11 +91,21 @@ const Container = styled.div`
 
 const FeaturesContainer = styled.div`
     margin-left: 196px; margin-right: 196px;
-    margin-top: 64px;
+    padding-top: 64px;
 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    @media only screen and (max-width: ${devices.medium}) {
+        margin: 0;
+        padding-left: 16px; padding-right: 16px;
+        padding-bottom: 32px;
+        gap: 10px;
+        flex-wrap: wrap;
+
+        justify-content: space-around;
+    }
 `
 
 const HeaderContainer = styled.div`
@@ -136,6 +148,13 @@ const DescriptionContainer = styled.section`
 
     margin-left: 196px; margin-right: 196px;
     margin-top: 64px; margin-bottom: 64px;
+
+    @media only screen and (max-width: ${devices.medium}) {
+        margin: 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+    }
 `
 
 const DescriptionLeft = styled.div`
@@ -145,6 +164,11 @@ const DescriptionLeft = styled.div`
     align-items: center;
 
     width: 40%;
+
+    @media only screen and (max-width: ${devices.medium}) {
+        padding-top: 16px;
+        width: 80%;
+    }
 `
 
 const Headshot = styled.img`
@@ -184,4 +208,9 @@ const DescriptionRight = styled.div`
 
     width: 60%;
     padding-left: 64px;
+
+    @media only screen and (max-width: ${devices.medium}) {
+        padding: 0;
+        width: 80%;
+    }
 `
