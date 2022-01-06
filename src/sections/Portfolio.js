@@ -6,7 +6,9 @@ import CodingQuiz from "../images/CodingQuizScreenshot.PNG";
 import WeatherDashboard from "../images/WeatherDashboardScreenshot.PNG";
 import Animates from "../images/AnimatesScreenshot.png";
 
-import projects from "../db/projects.json"
+import projects from "../db/projects.json";
+
+import devices from "../devices";
 
 export default function Portfolio() {
     const images = {
@@ -87,7 +89,11 @@ const PortfolioContainer = styled.div`
     flex-wrap: wrap;
 
     /* Using bottom padding to extend container */
-    padding-top: 32px; padding-bottom: 64px;
-    margin-left: 140px; margin-right: 140px;
+     padding-bottom: 64px;
+    padding-left: 140px; padding-right: 140px;
+
+    @media only screen and (max-width: ${devices.medium}) {
+        padding-left: 30px; padding-right: 30px;
+    }
 `
 

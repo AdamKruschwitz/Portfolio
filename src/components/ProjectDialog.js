@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import Button from "./Button";
 
+import devices from "../devices";
+
 export default function ProjectDialog({description, image, name, visible, setVisible, github, liveLink}) {
     return (
         <Container visible={visible}>
@@ -51,6 +53,10 @@ const DialogContainer = styled.div`
     z-index: 11;
 
     overflow: hidden;
+
+    @media only screen and (max-width: ${devices.medium}) {
+        width: 90%;
+    }
 `
 
 const DialogImage = styled.img`

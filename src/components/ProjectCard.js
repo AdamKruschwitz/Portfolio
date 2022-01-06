@@ -3,6 +3,8 @@ import styled from "styled-components";
 import Button from "./Button";
 import ProjectDialog from "./ProjectDialog";
 
+import devices from "../devices";
+
 export default function ProjectCard({name, technologies, image, description, github, liveLink}) {
     const [displayModal, setDisplayModal] = useState(false);
     // Convert technologies name to slash separated list
@@ -40,6 +42,11 @@ const Container = styled.div`
     overflow: hidden;
     height: 300px;
     position: relative;
+
+    @media only screen and (max-width: ${devices.medium}) {
+        flex: 0 0 100%;
+        height: 200px;
+    }
 `
 
 const ProjectImage = styled.img`
