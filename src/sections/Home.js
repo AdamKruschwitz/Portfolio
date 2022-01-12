@@ -3,6 +3,8 @@ import styled, { keyframes } from "styled-components";
 
 import Button from "../components/Button";
 
+import resume from "../AdamKruschwitzResume.pdf";
+
 export default function Home () {
     return (
         <Background>
@@ -10,9 +12,10 @@ export default function Home () {
                 <Text>Hi, I'm <Hilighted>Adam Kruschwitz</Hilighted></Text>
                 <Text>I'm a full-stack web developer.</Text>
                 <Button 
-                    text="View my work" 
+                    text="Download my resume" 
                     color="#ffffff" 
-                    link="#portfolio"
+                    link={resume}
+                    isDownload={true}
                 />
             </Content>
         </Background>

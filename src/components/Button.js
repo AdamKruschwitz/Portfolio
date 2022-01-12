@@ -1,17 +1,24 @@
 import React from "react";
 import styled from 'styled-components';
 
-export default function Button({ className, text, color, onClick, link }) {
+export default function Button({ className, text, color, onClick, link, isDownload=false }) {
+    if(isDownload) return (
+        <a href={link}>
+        <ButtonContainer color={color} onClick={onClick} href={link} download>
+            <ButtonText>{text}</ButtonText>
+        </ButtonContainer>
+        </a>
+    )
     return (
         <a href={link}>
-        <ButtonContainer color={color} onClick={onClick} href="https://google.com">
+        <ButtonContainer color={color} onClick={onClick} href={link}>
             <ButtonText>{text}</ButtonText>
         </ButtonContainer>
         </a>
     )
 }
 
-const ButtonContainer = styled.button`
+const ButtonContainer = styled.a`
     display: inline-block;
 
     border-style: solid;
